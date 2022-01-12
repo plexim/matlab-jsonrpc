@@ -110,9 +110,19 @@ classdef jsonrpc < handle
             % send request
             response = webwrite(obj.Url, request, obj.Options);
             
+            % sanity check
+            if ~isstruct(response)
+                response = char(response);
+                if length(response) > 100
+                    response = [response(1:97) '...'];
+                end
+                error('JSONRPC:Invoke', 'server did not send a JSON response but this instead:\n%s', ...
+                    response)
+            end
+            
             % check response id
             if response.id ~= obj.Id
-                error('JSONRPC:Invoke', 'response id (%i) does not match request id (%i)', ...
+                error('JSONRPC:Invoke', 'server response id (%i) does not match request id (%i)', ...
                     response.id, obj.Id)
             end
             
