@@ -1,4 +1,4 @@
-# Implementation of a JSON-RPC 2.0 client for MATLAB
+# Implementation of a JSON-RPC 2.0 client for MATLAB and Octave
  
 ## Syntax
 `PROXY = jsonrpc(URL, ...)`
