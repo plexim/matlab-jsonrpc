@@ -11,7 +11,7 @@ The URL argument may be followed by name/value pairs that are
 passed to WEBOPTIONS. This is useful e.g. to increase the connection
 timeout for RPC commands that require a long time to complete.
 Note that the `MediaType` weboption is always `application/json`
-and cannot be changed.
+and 'application/x-www-form-urlencoded' for Octave and cannot be changed.
 
 RPC methods of the server are invoked as if they were methods of
 the proxy object itself.
@@ -31,4 +31,4 @@ jsonrpc uses WEBWRITE for the actual communication with the server.
 
 See also weboptions, webwrite, [https://www.jsonrpc.org](https://www.jsonrpc.org)
 
-Copyright (c) 2022 Plexim GmbH
+Copyright (c) 2026 Plexim GmbH
